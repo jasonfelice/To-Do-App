@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 import React, { Component } from 'react';
+import TodoItem from './TodoItem';
 
 export default class TodosList extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export default class TodosList extends Component {
     return (
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>{todo.title}</li>
+          <TodoItem key={todo.id} todo={todo}></TodoItem>
         ))}
       </ul>
     );

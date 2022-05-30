@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import React from 'react';
 import Header from './Header';
 import TodosList from './TodosList';
@@ -26,12 +27,26 @@ class TodoContainer extends React.Component {
     };
   }
 
+  handleChange = (id) => {
+    this.setState((prevState) => ({
+      todos: prevState.todos.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
+      }),
+    }));
+  }
+
   render() {
     const { todos } = this.state;
     return (
       <>
         <Header />
-        <TodosList todos={todos} />
+        <TodosList handleChangeProps={this.handleChange} todos={todos} />
       </>
     );
   }

@@ -14,7 +14,11 @@ export default class TodosList extends Component {
     return (
       <ul>
         {todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo}></TodoItem>
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            handleChangeProps={this.props.handleChangeProps}>
+          </TodoItem>
         ))}
       </ul>
     );

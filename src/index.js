@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 // Component
 import TodoContainer from './components/TodoContainer';
 
+// Style
+import './app.css';
+
 ReactDOM.render(
   <>
     <React.StrictMode>

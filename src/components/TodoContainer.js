@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Header from './Header';
 import TodosList from './TodosList';
 import InputTodo from './InputTodo';
@@ -10,17 +11,17 @@ class TodoContainer extends React.Component {
     this.state = {
       todos: [
         {
-          id: 1,
+          id: uuidv4(),
           title: 'Setup development environment',
           completed: true,
         },
         {
-          id: 2,
+          id: uuidv4(),
           title: 'Develop website and add content',
           completed: true,
         },
         {
-          id: 3,
+          id: uuidv4(),
           title: 'Deploy to live server',
           completed: true,
         },
@@ -49,12 +50,24 @@ class TodoContainer extends React.Component {
     });
   }
 
+  addTodoItem = (title) => {
+    const { todos } = this.state;
+    const newTodo = {
+      id: uuidv4(),
+      title,
+      completed: false,
+    };
+    this.setState({
+      todos: [...todos, newTodo],
+    });
+  };
+
   render() {
     const { todos } = this.state;
     return (
       <>
         <Header />
-        <InputTodo />
+        <InputTodo addTodoProps={this.addTodoItem} />
         <TodosList
           handleChangeProps={this.handleChange}
           todos={todos}

@@ -63,3 +63,14 @@ body {
   outline: none;
   border: none;
 }
+
+.input-submit svg {
+  color: rgb(69, 83, 78);
+  font-size: 20px;
+  margin-top: 2px;
+  transition: all 0.2s ease-in;
+}
+
+.input-submit svg:hover {
+  color: rgb(5, 117, 42);
+}

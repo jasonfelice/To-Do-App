@@ -18,8 +18,8 @@ export default class TodosList extends Component {
             key={todo.id}
             todo={todo}
             handleChangeProps={this.props.handleChangeProps}
-            deleteTodoProps={this.props.deleteTodoProps}>
-          </TodoItem>
+            deleteTodoProps={this.props.deleteTodoProps}
+            setUpdate={this.props.setUpdate} />
         ))}
       </ul>
     );

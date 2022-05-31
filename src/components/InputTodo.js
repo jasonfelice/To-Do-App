@@ -1,25 +1,25 @@
-/* eslint-disable */
-
-
-import React, { useState } from "react";
-import { FaPlusCircle  } from "react-icons/fa";
+/* eslint-disable no-alert */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
+import { FaPlusCircle } from 'react-icons/fa';
 
 const InputTodo = (props) => {
-  const [title, setTitle] = useState("")
+  const [title, setTitle] = useState('');
 
   const onChange = (e) => {
-    setTitle(e.target.value)
-  }
+    setTitle(e.target.value);
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (title.trim()) {
-      props.addTodoProps(title)
-      setTitle("")
+      props.addTodoProps(title);
+      setTitle('');
     } else {
-      alert("Please write item")
+      alert('Please write item');
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="form-container">
@@ -31,11 +31,11 @@ const InputTodo = (props) => {
         name="title"
         onChange={onChange}
       />
-      <button className="input-submit">
-      <FaPlusCircle  />
+      <button type="button" className="input-submit">
+        <FaPlusCircle />
       </button>
     </form>
-  )
-}
+  );
+};
 
-export default InputTodo
+export default InputTodo;

@@ -74,3 +74,8 @@ body {
 .input-submit svg:hover {
   color: rgb(5, 117, 42);
 }
+
+.active-link {
+  color: orangered;
+  text-decoration: underline;
+}

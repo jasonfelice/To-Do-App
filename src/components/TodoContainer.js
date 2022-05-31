@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-param-reassign */
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
@@ -19,9 +20,11 @@ class TodoContainer extends React.Component {
     });
   }
 
-  componentDidUpdate() {
-    const { todos } = this.state;
-    localStorage.setItem('list', JSON.stringify(todos));
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.todos !== this.state.todos) {
+      const { todos } = this.state;
+      localStorage.setItem('list', JSON.stringify(todos));
+    }
   }
 
   handleChange = (id) => {

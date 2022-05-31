@@ -20,7 +20,7 @@ npm install
 Run `npm start` to start live server.
 
 To get a local copy up and running follow these simple example steps.
-- Copy this [link](https://github.com/jasonfelice/Math-Magicians)
+- Copy this [link](#)
 - Open the terminal
 - Run "git clone" and paste the link
 - Install dependencies 
